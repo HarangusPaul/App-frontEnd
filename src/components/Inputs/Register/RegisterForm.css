@@ -1,0 +1,92 @@
+.InputField {
+    border-bottom: black;
+    border-style: none;
+    outline: none;
+}
+
+.ui.input.Email{
+    position: absolute;
+    border-top: white ;
+    border-left: white ;
+    border-right: white ;
+    margin-bottom: 40px;
+    /*height: 20px;*/
+    width: 250px;
+    left:25%;
+    text-align: left;
+    top:25%;
+    outline: none;
+}
+
+.ui.input.Username{
+    position: absolute;
+    border-top: white ;
+    border-left: white ;
+    border-right: white ;
+    margin-bottom: 40px;
+    /*height: 20px;*/
+    width: 250px;
+    left:25%;
+    text-align: left;
+    top:40%;
+    outline: none;
+}
+
+.ui.input.Password{
+    position: absolute;
+    border-top: white;
+    border-left: white;
+    border-right: white;
+    /*height: 20px;*/
+    width: 250px;
+    left:25%;
+    text-align: left;
+    top:55%;
+    outline: none;
+}
+
+.ui.input.ConfirmPassword{
+    position: absolute;
+    border-top: white;
+    border-left: white;
+    border-right: white;
+    /*height: 20px;*/
+    width: 250px;
+    left:25%;
+    text-align: left;
+    top:70%;
+    outline: none;
+}
+
+.ui.animated.button.SendButton{
+    top:95%;
+    width: 180px;
+    left:140px;
+    position: absolute;
+}
+
+.formDiv{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    align-content: center;
+    bottom: 50px;
+    width: 90%;
+    height: 70%;
+}
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.errorLabel {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top:620%;
+    left: 170px;
+    color: darkred;
+    width: 100%;
+    align-content: center;
+}

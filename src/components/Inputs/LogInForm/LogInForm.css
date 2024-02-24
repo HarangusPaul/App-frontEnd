@@ -1,0 +1,65 @@
+.InputField {
+    border-bottom: black;
+    border-style: none;
+    outline: none;
+}
+
+.ui.input.EmailLogIn{
+    position: absolute;
+    border-top: white ;
+    border-left: white ;
+    border-right: white ;
+    margin-bottom: 40px;
+    /*height: 20px;*/
+    width: 250px;
+    left:25%;
+    text-align: left;
+    top:40%;
+    outline: none;
+}
+
+.ui.input.PasswordLogIn{
+    position: absolute;
+    border-top: white;
+    border-left: white;
+    border-right: white;
+    /*height: 20px;*/
+    width: 250px;
+    left:25%;
+    text-align: left;
+    top:55%;
+    outline: none;
+}
+
+.ui.animated.button.SendButtonLogIn{
+    top:80%;
+    width: 180px;
+    left:140px;
+    position: absolute;
+}
+
+.formDiv{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    align-content: center;
+    bottom: 50px;
+    width: 90%;
+    height: 70%;
+}
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.errorLabelLogIn {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top:415%;
+    left: 77%;
+    color: darkred;
+    width: 100%;
+    align-content: center;
+}
