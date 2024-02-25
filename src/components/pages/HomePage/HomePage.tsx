@@ -6,9 +6,6 @@ export const HomePage = () => {
 
     return (
         <div>
-            <div className={"navBar"}>
-                <NavBar/>
-            </div>
             <div className={"backGround"}>
 
 

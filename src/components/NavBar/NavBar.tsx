@@ -23,7 +23,7 @@ export const NavBar = () =>{
             <MenuItem
                 name='Page 2'
                 active={false}
-                onClick={() => { navigateTo("/HomePage") }}
+                onClick={() => { navigateTo("/TablePage") }}
             >
                 <Icon name='file archive outline' />
                 Page 2
