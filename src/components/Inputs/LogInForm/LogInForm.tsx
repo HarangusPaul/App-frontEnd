@@ -35,6 +35,7 @@ export const LogInForm= () =>{
         if (!isValidEmail(email) || !isValidPassword(password)) {
             setError(true);
         }
+        localStorage.setItem("token","a");
         return;
     }
 
@@ -51,7 +52,7 @@ export const LogInForm= () =>{
                 setError(false);
             }}/>
 
-                {error?(<label className={"errorLabel"}>The credentials are incorrect!</label>):(<></>)}
+                {error?(<label className={"errorLabelLogIn"}>The credentials are incorrect!</label>):(<></>)}
 
             <Button animated type="submit" className={"SendButtonLogIn"} onClick={(e) => {submit(e)}}>
                 <ButtonContent visible>Next</ButtonContent>
