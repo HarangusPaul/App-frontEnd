@@ -14,7 +14,7 @@ export const NavBar = () =>{
             <MenuItem
                 name='Home Page'
                 active={false}
-                onClick={() => { navigateTo("/HomePage") }}
+                onClick={() => { navigateTo("/") }}
             >
                 <Icon name='home' />
                 Home Page

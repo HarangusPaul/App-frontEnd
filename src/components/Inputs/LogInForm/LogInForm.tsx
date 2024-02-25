@@ -35,6 +35,7 @@ export const LogInForm= () =>{
         if (!isValidEmail(email) || !isValidPassword(password)) {
             setError(true);
         }
+        localStorage.setItem("token","a");
         return;
     }
 
