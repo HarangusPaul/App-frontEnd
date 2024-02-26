@@ -3,7 +3,7 @@ import {Divider} from "semantic-ui-react";
 import {SimpleTable, SimpleTableProps} from "../../Inputs/Table/SimpleTable";
 
 export const TablePage = (props:any) => {
-    const names = ["Name","Age","Job"]
+    const names = ["Name","Age","Job"];
     const data:SimpleTableProps = {tableColumnNames: names, tableColumnValues: []}
 
     return (
@@ -17,7 +17,7 @@ export const TablePage = (props:any) => {
             <Divider className={"divider"} />
 
             <div className={"tableDiv"}>
-                <SimpleTable props={data} list={names}/>
+                <SimpleTable props={data}/>
             </div>
         </div>
     )
