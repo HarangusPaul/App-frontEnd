@@ -1,6 +1,6 @@
 import React from 'react';
 import './Register.css';
-import {RegisterForm} from "../../Inputs/Register/RegisterForm";
+import {RegisterForm} from "../../Inputs/Forms/Register/RegisterForm";
 import {Image} from "semantic-ui-react";
 
 export const Register = () => {

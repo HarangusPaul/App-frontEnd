@@ -1,6 +1,6 @@
 import React from 'react';
 import './LogIn.css';
-import {LogInForm} from "../../Inputs/LogInForm/LogInForm"
+import {LogInForm} from "../../Inputs/Forms/LogInForm/LogInForm"
 import {Image} from "semantic-ui-react";
 
 export const LogIn = () => {
