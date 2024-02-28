@@ -1,14 +1,23 @@
-import axios, {Axios, AxiosResponse} from "axios";
+import axios, {AxiosResponse} from 'axios';
+import {UserLoginModel} from "../Models/UserLoginModel";
+import {TokenModel} from "../Models/TokenModel";
 
 const ipServer = "http://localhost:8080/app/v1";
 
 export class UserService {
-    get() {
-        axios.get(`${ipServer}/users/get`)
-            .then(function (response:AxiosResponse<string>) {
-                console.log(response);
+    login(userReq: UserLoginModel) {
+
+        return axios
+            .post(
+                `${ipServer}/accounts/login`,
+                    userReq,
+
+            )
+                    .then(function (response:AxiosResponse<TokenModel>) {
+                return response.data;
+
             })
-            .catch(function (error) {
+            .catch(function (error:any) {
                 console.log(error);
             });
     }
