@@ -8,12 +8,15 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/axios": "^0.14.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.74",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
+    "axios": "^1.6.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.21.3",
     "react-scripts": "5.0.1",
     "semantic-ui-css": "^2.5.0",
@@ -47,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-modal": "^3.16.3",
     "@types/validator": "^13.11.8"
   }
 }

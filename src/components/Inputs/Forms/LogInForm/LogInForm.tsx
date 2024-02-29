@@ -3,10 +3,15 @@ import "./LogInForm.css"
 import {Button, ButtonContent, Icon, Input} from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css';
 import validator from "validator";
+import {UserService} from "../../../../services/api/UserAxis";
+import {UserLoginModel} from "../../../../services/Models/UserLoginModel";
+import {TokenModel} from "../../../../services/Models/TokenModel";
 
 
 
 export const LogInForm= () =>{
+    const userService = new UserService();
+    const [token,setToken] = useState<string>("");
     const [error,setError] = useState(false);
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
@@ -28,14 +33,28 @@ export const LogInForm= () =>{
             return false;
         }
     }
-
+    ///pana aici is field functions ce ar putea fii inlocuite
 
     const submit = (e:any)=>{
         e.preventDefault();
         if (!isValidEmail(email) || !isValidPassword(password)) {
             setError(true);
+            return;
         }
-        localStorage.setItem("token","a");
+        // const data:UserLoginModel = {
+        //     email:"paulhrangus@gmail.com",
+        //     password:"123Stm/"
+        // }
+        const data:UserLoginModel = {
+            email:email,
+            password:password
+        }
+        userService.login(data).then((token)=>{
+            if(typeof token == "object"){
+                const string = JSON.stringify(token);
+                localStorage.setItem("token",string)
+            }
+        })
         return;
     }
 
