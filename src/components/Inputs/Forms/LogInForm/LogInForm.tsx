@@ -33,7 +33,7 @@ export const LogInForm= () =>{
             return false;
         }
     }
-
+    ///pana aici is field functions ce ar putea fii inlocuite
 
     const submit = (e:any)=>{
         e.preventDefault();
