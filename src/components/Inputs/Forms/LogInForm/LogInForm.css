@@ -63,3 +63,124 @@
     width: 100%;
     align-content: center;
 }
+
+
+@media only screen and (max-width: 1360px) {
+    .LogInContainer {
+        position: absolute;
+        background: white;
+        border-radius: 25px;
+        top: 20%;
+        left: 35.5%;
+        height: 50%;
+        width: 26%;
+    }
+
+    .ui.animated.button.SendButtonLogIn {
+        top: 80%;
+        width: 180px;
+        left: 26%;
+        position: absolute;
+    }
+
+    .ui.input.PasswordLogIn {
+        position: absolute;
+        border-top: white;
+        border-left: white;
+        border-right: white;
+        /* height: 20px; */
+        width: 250px;
+        left: 15%;
+        text-align: left;
+        top: 55%;
+        outline: none;
+    }
+
+    .ui.input.EmailLogIn {
+        position: absolute;
+        border-top: white;
+        border-left: white;
+        border-right: white;
+        margin-bottom: 40px;
+        /* height: 20px; */
+        width: 250px;
+        left: 15%;
+        text-align: left;
+        top: 40%;
+        outline: none;
+    }
+
+    .ui.image.Logo {
+        position: relative;
+        top: 10%;
+    }
+
+    .errorLabelLogIn {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        top: 350%;
+        left: 44%;
+        color: darkred;
+        width: 100%;
+        align-content: center;
+    }
+}
+
+
+@media only screen and (max-width: 412px) {
+    .LogInContainer {
+        position: absolute;
+        background: white;
+        border-radius: 25px;
+        top: 20%;
+        left: 17.5%;
+        height: 50%;
+        width: 70%;
+    }
+
+    .ui.animated.button.SendButtonLogIn {
+        top: 80%;
+        width: 180px;
+        left: 20%;
+        position: absolute;
+    }
+
+    .ui.input.EmailLogIn {
+        position: absolute;
+        border-top: white;
+        border-left: white;
+        border-right: white;
+        margin-bottom: 40px;
+        /* height: 20px; */
+        width: 210px;
+        left: 15%;
+        text-align: left;
+        top: 40%;
+        outline: none;
+    }
+
+    .ui.input.PasswordLogIn {
+        position: absolute;
+        border-top: white;
+        border-left: white;
+        border-right: white;
+        /* height: 20px; */
+        width: 210px;
+        left: 15%;
+        text-align: left;
+        top: 55%;
+        outline: none;
+    }
+
+    .errorLabelLogIn {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        top: 415%;
+        left: 29%;
+        color: darkred;
+        width: 100%;
+        align-content: center;
+    }
+}

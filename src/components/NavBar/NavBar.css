@@ -6,3 +6,19 @@
 .ui.labeled.icon.menu.navbar{
     height: 100%;
 }
+
+@media only screen and (max-width: 1360px) {
+
+    .ui.labeled.icon.menu .item.signOut {
+        position: relative;
+        top: 62%;
+    }
+
+}
+
+@media only screen and (max-width: 412px){
+    .ui.labeled.icon.menu .item.signOut {
+        position: relative;
+        top: 68%;
+    }
+}
