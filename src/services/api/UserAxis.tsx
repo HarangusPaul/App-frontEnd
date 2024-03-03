@@ -1,6 +1,8 @@
 import axios, {AxiosResponse} from 'axios';
-import {UserLoginModel} from "../Models/UserLoginModel";
-import {TokenModel} from "../Models/TokenModel";
+import {UserLoginModel} from "../models/UserLoginModel";
+// @ts-ignore
+import {TokenModel} from "../models/TokenModel";
+
 
 const ipServer = "http://localhost:8080/app/v1";
 
@@ -17,7 +19,7 @@ export class UserService {
                 return response.data;
 
             })
-            .catch(function (error:any) {
+            .catch(function (error) {
                 console.log(error);
             });
     }

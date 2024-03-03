@@ -2,7 +2,7 @@ export const credentialVerifier = () => {
 
     function tokenIsValid(token: string) {
         //todo:token verifier
-        return false;
+        return token == "";
     }
 
     let allReadyLoggedOn = () => {

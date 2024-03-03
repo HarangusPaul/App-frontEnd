@@ -7,7 +7,6 @@ export const HomePage = () => {
         <div>
             <div className={"backGround"}>
                 <div className={"appView"}>
-                    <Button onClick={()=>{}}>apasa</Button>
                 </div>
             </div>
         </div>
