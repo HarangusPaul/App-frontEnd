@@ -1,12 +1,15 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./LogInForm.css"
 import {Button, ButtonContent, Icon, Input} from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css';
 import validator from "validator";
+import {UserService} from "../../../../services/api/UserAxis";
+import {TokenModel} from "../../../../services/models/tokenModel";
 
 
 
 export const LogInForm= () =>{
+    const userService = new UserService();
     const [error,setError] = useState(false);
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
@@ -35,7 +38,10 @@ export const LogInForm= () =>{
         if (!isValidEmail(email) || !isValidPassword(password)) {
             setError(true);
         }
-        localStorage.setItem("token","a");
+        userService.login().then((response)=>{
+            if(typeof response == 'string')
+                localStorage.setItem("token",response);
+        });
         return;
     }
 
@@ -51,7 +57,6 @@ export const LogInForm= () =>{
                 setPassword(e.target.value);
                 setError(false);
             }}/>
-
                 {error?(<label className={"errorLabelLogIn"}>The credentials are incorrect!</label>):(<></>)}
 
             <Button animated type="submit" className={"SendButtonLogIn"} onClick={(e) => {submit(e)}}>

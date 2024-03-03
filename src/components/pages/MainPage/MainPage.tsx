@@ -6,11 +6,13 @@ import {HomePage} from "../HomePage/HomePage";
 import {ProtectedRoute} from "../../../utils/router/ProtectedRoute";
 import {TablePage} from "../TabelPage/TablePage";
 import {NavBar} from "../../NavBar/NavBar";
+import {credentialVerifier} from "../../../utils/router/CredentialVerifier";
+import {PublicRoute} from "../../../utils/router/PublicRoute";
 
 
 export const MainPage = () => {
 
-    let auth = true;
+    let auth = !credentialVerifier();
     return (
         <Router>
             {auth ? (
@@ -27,9 +29,10 @@ export const MainPage = () => {
                             <Route path="/" element={<HomePage/>}/>
                             <Route path="/TablePage" element={<TablePage/>}/>
                         </Route>
-
-                        <Route path="/login" element={<LogIn/>}/>
-                        <Route path="/register" element={<Register/>}/>
+                        <Route element={<PublicRoute/>}>
+                            <Route path="/login" element={<LogIn/>}/>
+                            <Route path="/register" element={<Register/>}/>
+                        </Route>
                     </Routes>
                 </div>
             </div>
