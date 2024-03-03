@@ -4,12 +4,14 @@ import {Button, ButtonContent, Icon, Input} from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css';
 import validator from "validator";
 import {UserService} from "../../../../services/api/UserAxis";
-import {UserLoginModel} from "../../../../services/Models/UserLoginModel";
-import {TokenModel} from "../../../../services/Models/TokenModel";
+import {UserLoginModel} from "../../../../services/models/UserLoginModel";
+import {useNavigate} from "react-router-dom";
+
 
 
 
 export const LogInForm= () =>{
+    const navigate = useNavigate();
     const userService = new UserService();
     const [token,setToken] = useState<string>("");
     const [error,setError] = useState(false);
@@ -34,6 +36,9 @@ export const LogInForm= () =>{
         }
     }
 
+    function refreshPage() {
+        window.location.reload();
+    }
 
     const submit = (e:any)=>{
         e.preventDefault();
@@ -52,7 +57,8 @@ export const LogInForm= () =>{
         userService.login(data).then((token)=>{
             if(typeof token == "object"){
                 const string = JSON.stringify(token);
-                localStorage.setItem("token",string)
+                localStorage.setItem("token",string);
+                refreshPage();
             }
         })
         return;

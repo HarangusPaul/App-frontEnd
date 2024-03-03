@@ -2,10 +2,6 @@ import "./HomePage.css"
 import {Button} from "semantic-ui-react";
 
 export const HomePage = () => {
-    const f = () => {
-        console.log("a")
-    }
-
 
     return (
         <div>
