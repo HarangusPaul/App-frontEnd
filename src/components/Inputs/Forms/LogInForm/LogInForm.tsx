@@ -1,15 +1,21 @@
 import React, {useState} from "react";
 import "./LogInForm.css"
+// @ts-ignore
 import {Button, ButtonContent, Icon, Input} from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css';
 import validator from "validator";
 import {UserService} from "../../../../services/api/UserAxis";
 import {UserLoginModel} from "../../../../services/Models/UserLoginModel";
 import {TokenModel} from "../../../../services/Models/TokenModel";
+import {PasswordField} from "../../Fields/PasswordField";
 
 
 
 export const LogInForm= () =>{
+    // const a:MultipleFunctions = {
+    //     f1:()=>{},
+    //     f2:""
+    // }
     const userService = new UserService();
     const [token,setToken] = useState<string>("");
     const [error,setError] = useState(false);
@@ -23,15 +29,7 @@ export const LogInForm= () =>{
     }
 
     const isValidPassword = (value:any) => {
-
-        if (validator.isStrongPassword(value, {
-            minLength: 8, minLowercase: 1,
-            minUppercase: 1, minNumbers: 1, minSymbols: 1
-        })) {
-            return true;
-        } else {
-            return false;
-        }
+        return value != "";
     }
     ///pana aici is field functions ce ar putea fii inlocuite
 
@@ -66,10 +64,11 @@ export const LogInForm= () =>{
                 setEmail(e.target.value);
                 setError(false);
             }}/>
-            <Input type="password" className={"PasswordLogIn"} placeholder="Password" onChange={(e)=>{
-                setPassword(e.target.value);
-                setError(false);
-            }}/>
+            {/*<Input type="password" className={"PasswordLogIn"} placeholder="Password" onChange={(e)=>{*/}
+            {/*    setPassword(e.target.value);*/}
+            {/*    setError(false);*/}
+            {/*}}/>*/}
+                <PasswordField className={"PasswordLogIn"} props={setPassword}/>
 
                 {error?(<label className={"errorLabelLogIn"}>The credentials are incorrect!</label>):(<></>)}
 
