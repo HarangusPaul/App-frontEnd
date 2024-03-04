@@ -42,7 +42,7 @@ export const NavBar = () =>{
             <MenuItem className={"signOut"}
                 name='Sign out'
                 active={false}
-                onClick={() => { navigateTo("/login") }}
+                onClick={() => { localStorage.removeItem("token");window.location.reload(); }}
             >
                 <Icon name='power off' />
                 Sign out
