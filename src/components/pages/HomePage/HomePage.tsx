@@ -1,10 +1,12 @@
 import "./HomePage.css"
 import {Button} from "semantic-ui-react";
 import {ErrorModal} from "../../Modals/Dialog/ErrorModal/ErrorModal";
+import {useState} from "react";
 
 
 
 export const HomePage = () => {
+    const[state,setState] = useState<boolean>(false)
 
     return (
         <div>
