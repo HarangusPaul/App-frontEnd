@@ -1,6 +1,6 @@
 import {Button, Modal, ModalActions, ModalContent, ModalHeader} from "semantic-ui-react";
 import React, {useEffect} from "react";
-import "./ResponsiveModal.css";
+import './ResponsesModal.css'
 
 export interface ModalProps {
     open: boolean;
@@ -8,7 +8,7 @@ export interface ModalProps {
     setOpen:(opt:boolean)=>{};
 }
 
-export const ResponsiveModal = (props: any) => {
+export const ResponsesModal = (props: any) => {
     const [open, setOpen] = React.useState(false);
     const [counter, setCounter] = React.useState(0);
 
