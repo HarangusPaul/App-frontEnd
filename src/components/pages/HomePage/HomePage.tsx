@@ -11,7 +11,7 @@ export const HomePage = () => {
             <div className={"backGround"}>
                 <div className={"appView"}>
                     <Button onClick={() => setState(true)}>
-                        Tiny
+                        Login
                     </Button>
                     <ResponsesModal props={{open:state,setOpen:setState,text:"You've been logged in successfully!",header:"Login",messageButton:"Ok"}}/>
                 </div>
