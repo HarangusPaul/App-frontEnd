@@ -14,7 +14,7 @@ export const HomePage = () => {
                     <Button onClick={() => setState(true)}>
                         ApprovementModal
                     </Button>
-                    <ApprovalModal props={{open:state,setOpen:setState,text:"You've been logged in successfully!",header:"Login",messageButton:"Ok"}}/>
+                    <ApprovalModal props={{open:state,setOpen:setState,text:"Do you want to do this knowing the consequences?",header:"Approve",messageButton1:"Approve", messageButton2: "Reject"}}/>
                 </div>
             </div>
         </div>

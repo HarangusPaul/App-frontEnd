@@ -35,9 +35,17 @@ export const ApprovalModal = (props: any) => {
                 <p>{props.props.text}</p>
             </ModalContent>
             <ModalActions>
-                <Button onClick={() => setOpen(false)} color={"green"}>Approve</Button>
+                <Button positive onClick={() => {
+                    setOpen(false)
+                }}>
+                    {props.props.messageButton1}
+                </Button>
 
-                <Button onClick={() => window.location.reload()} color={"red"}>Reject</Button>
+                <Button negative onClick={() => {
+                    setOpen(false)
+                }}>
+                    {props.props.messageButton2}
+                </Button>
 
 
             </ModalActions>
