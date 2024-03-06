@@ -5,7 +5,7 @@ import './ResponsesModal.css'
 export interface ModalProps {
     open: boolean;
     size: any;
-    setOpen:(opt:boolean)=>{};
+    setOpen: (opt: boolean) => {};
 }
 
 export const ResponsesModal = (props: any) => {
@@ -13,27 +13,31 @@ export const ResponsesModal = (props: any) => {
     const [counter, setCounter] = React.useState(0);
 
     useEffect(() => {
-            if(counter === 0){
+            if (counter === 0) {
                 setCounter(1)
                 return;
             }
             setOpen(true)
             props.props.setOpen(false);
         }
-    ,[props])
+        , [props])
 
     return (
         <Modal className={"modalFrame"}
-            size={props.size}
-            open={open}
-            onClose={() => {props.setOpen(false)}}
+               size={props.size}
+               open={open}
+               onClose={() => {
+                   if (props.setOpen != undefined) props.setOpen(false)
+               }}
         >
             <ModalHeader>{props.props.header}</ModalHeader>
             <ModalContent>
                 <p>{props.props.text}</p>
             </ModalContent>
             <ModalActions>
-                <Button positive onClick={() => {setOpen(false)}}>
+                <Button positive onClick={() => {
+                    setOpen(false)
+                }}>
                     {props.props.messageButton}
                 </Button>
             </ModalActions>

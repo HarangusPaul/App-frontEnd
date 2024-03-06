@@ -13,7 +13,7 @@ export const HomePage = () => {
                     <Button onClick={() => setState(true)}>
                         Tiny
                     </Button>
-                    <ResponsesModal props={{open:state,setOpen:setState,text:"abc",header:"aaaa",messageButton:"nu am chef!"}}/>
+                    <ResponsesModal props={{open:state,setOpen:setState,text:"You've been logged in successfully!",header:"Login",messageButton:"Ok"}}/>
                 </div>
             </div>
         </div>
