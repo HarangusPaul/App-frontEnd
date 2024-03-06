@@ -15,11 +15,8 @@ export const HomePage = () => {
                     <Button onClick={() => setState(true)}>
                         Sure, retry!
                     </Button>
-                    <Button onClick={() => setState(true)}>
-                        Sure, exit!
-                    </Button>
-                    <ErrorModal props={{open:state,setOpen:setState,text:"You've been logged in successfully!",header:"Login",messageButton:"Ok"}}/>
                 </div>
+                <ErrorModal props={{open:state,setOpen:setState,text:"You've encountered an error!",header:"Error",messageButton1:"Sure, exit!", messageButton2:"Sure, Retry!"}}/>
             </div>
         </div>
     )

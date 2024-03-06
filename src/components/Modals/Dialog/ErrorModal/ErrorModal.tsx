@@ -1,6 +1,6 @@
 import {Button, Modal, ModalActions, ModalContent, ModalHeader} from "semantic-ui-react";
 import React, {useEffect} from "react";
-import './ResponsesModal.css'
+import "./ErrorModal.css";
 
 export interface ModalProps {
     open: boolean;
@@ -35,11 +35,11 @@ export const ErrorModal = (props: any) => {
                 <p>{props.props.text}</p>
             </ModalContent>
             <ModalActions>
-                <Button positive onClick={() => {
-                    setOpen(false)
-                }}>
-                    {props.props.messageButton}
-                </Button>
+                <Button onClick={() => setOpen(false)} color={"green"}>Retry!</Button>
+
+                <Button onClick={() => window.location.reload()} color={"red"}>Exit!</Button>
+
+
             </ModalActions>
         </Modal>
     )
