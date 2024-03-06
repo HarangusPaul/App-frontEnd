@@ -4,8 +4,8 @@ import {Button, ButtonContent, Icon, Input} from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css';
 import validator from "validator";
 import {UserService} from "../../../../services/api/UserAxis";
-import {UserLoginModel} from "../../../../services/models/UserLoginModel";
 import {useNavigate} from "react-router-dom";
+import {UserLoginModel} from "../../../../services/Models/UserLoginModel";
 
 
 
