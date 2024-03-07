@@ -6,12 +6,19 @@ import React, {useState} from "react";
 import {ModalProps, ResponsesModal} from "../../Modals/Dialog/ResponsesModal/ResponsesModal";
 import {ApprovalModal} from "../../Modals/Dialog/ApprovementModal/ApprovalModal";
 import DropdownButton from "../../Inputs/Buttons/DropdownButton/DropdownButton";
-import {ChoiceModal} from "../../Modals/Dialog/ChoiceModal/ChoiceModal";
+import {ChoiceModal, ModalPropsChoice} from "../../Modals/Dialog/ChoiceModal/ChoiceModal";
 
 
 export const HomePage = () => {
 
     const[state,setState] = useState<boolean>(false)
+    const [dropdownOptions, setDropdownOptions] = useState([
+        { key: '1', text: 'Option 1', value: 'Option 1' },
+        { key: '2', text: 'Option 2', value: 'Option 2' },
+    ]);
+
+
+    const modalProps: ModalPropsChoice = {open:state,setOpen:setState,text:"You need to chose from the list below!",header:"Please choose",messageButton:"DONE", options: dropdownOptions}
 
     return (
         <div>
@@ -31,10 +38,10 @@ export const HomePage = () => {
                     {/*    Sure, retry!*/}
                     {/*</Button>*/}
 
-                    <ChoiceModal props={{open:state,setOpen:setState,text:"You can chose from the list below ",header:"Please chose",messageButton:"DONE"}}/>
-                    <Button onClick={() => setState(true)}>
-                        ChoiceModal Button
-                    </Button>
+                    {/*<ChoiceModal props={modalProps}/>*/}
+                    {/*<Button onClick={() => setState(true)}>*/}
+                    {/*        ChoiceModal*/}
+                    {/*</Button>*/}
 
                     {/*
                     multiple: attribute can be 'true' or 'false'
@@ -45,7 +52,7 @@ export const HomePage = () => {
 
 
                 </div>
-                <ErrorModal props={{open:state,setOpen:setState,text:"You've encountered an error!",header:"Error",messageButton1:"Sure, exit!", messageButton2:"Sure, Retry!"}}/>
+                {/*<ErrorModal props={{open:state,setOpen:setState,text:"You've encountered an error!",header:"Error",messageButton1:"Sure, exit!", messageButton2:"Sure, Retry!"}}/>*/}
             </div>
         </div>
     )

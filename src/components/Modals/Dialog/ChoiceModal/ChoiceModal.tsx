@@ -1,48 +1,62 @@
-import {Button, Modal, ModalActions, ModalContent, ModalHeader} from "semantic-ui-react";
-import React, {useEffect} from "react";
-import './ChoiceModal.css'
-import DropdownButton from "../../../Inputs/Buttons/DropdownButton/DropdownButton";
+import React, {Dispatch, SetStateAction, useEffect} from 'react';
+import {Button, Modal, ModalActions, ModalContent, ModalHeader} from 'semantic-ui-react';
+import './ChoiceModal.css';
+import DropdownButton from '../../../Inputs/Buttons/DropdownButton/DropdownButton';
 
-export interface ModalProps {
+export interface ModalPropsChoice {
+    messageButton: string;
+    text: string;
+    header: string;
+    // size: any;
     open: boolean;
-    size: any;
-    setOpen: (opt: boolean) => {};
+    setOpen: Dispatch<SetStateAction<boolean>>;
+    options: Option[]
 }
 
-export const ChoiceModal = (props: any) => {
+interface Option {
+    key: string;
+    text: string;
+    value: string;
+}
+
+export const ChoiceModal = ({props}: { props: ModalPropsChoice }) => {
     const [open, setOpen] = React.useState(false);
     const [counter, setCounter] = React.useState(0);
 
     useEffect(() => {
-            if (counter === 0) {
-                setCounter(1)
-                return;
-            }
-            setOpen(true)
-            props.props.setOpen(false);
+        if (counter === 0) {
+            setCounter(1);
+            return;
         }
-        , [props])
+        setOpen(true);
+    }, [props]);
 
     return (
-        <Modal className={"modalFrame"}
-               size={props.size}
-               open={open}
-               onClose={() => {
-                   if (props.setOpen != undefined) props.setOpen(false)
-               }}
+        <Modal
+            className={'modalFrame'}
+            size={'tiny'}
+            height={2000}
+            open={open}
+            onClose={() => {
+                if (props.setOpen != undefined) props.setOpen(false);
+            }}
         >
-            <ModalHeader>{props.props.header}</ModalHeader>
+            <ModalHeader>{props.header}</ModalHeader>
             <ModalContent>
-                <p>{props.props.text}</p>
+                <p>{props.text}</p>
+                <DropdownButton multiple={true} search={true} options={props.options}/>
             </ModalContent>
             <ModalActions>
                 <Button positive onClick={() => {
-                    setOpen(false)
+                    if (props.setOpen != undefined) {
+                        setCounter(0)
+                        props.setOpen(false)
+                        setOpen(false);
+                    }
                 }}>
-                    {props.props.messageButton}
+                    {props.messageButton}
                 </Button>
-                <DropdownButton multiple={true} search={true}/>
             </ModalActions>
         </Modal>
-    )
-}
+    );
+};
