@@ -5,7 +5,7 @@ import 'semantic-ui-css/semantic.min.css';
 import validator from "validator";
 import {UserService} from "../../../../services/api/UserAxis";
 import {useNavigate} from "react-router-dom";
-import {UserLoginModel} from "../../../../services/models/UserLoginModel";
+import {UserLoginModel} from "../../../../services/Models/UserLoginModel";
 
 
 
