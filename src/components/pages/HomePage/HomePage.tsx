@@ -1,10 +1,11 @@
 import "./HomePage.css"
-import {Button} from "semantic-ui-react";
+import {Button, Dropdown} from "semantic-ui-react";
 import {ErrorModal} from "../../Modals/Dialog/ErrorModal/ErrorModal";
 import {useState} from "react";
 
 import {ModalProps, ResponsesModal} from "../../Modals/Dialog/ResponsesModal/ResponsesModal";
 import {ApprovalModal} from "../../Modals/Dialog/ApprovementModal/ApprovalModal";
+import DropdownButton from "../../Inputs/Buttons/DropdownButton/DropdownButton";
 
 export const HomePage = () => {
 
@@ -25,6 +26,12 @@ export const HomePage = () => {
                     <Button onClick={() => setState(true)}>
                         Sure, retry!
                     </Button>
+                    {/*
+                    multiple: attribute can be 'true' or 'false'
+                    search: attribute can be 'true' or 'false'
+                    */
+                    }
+                    <DropdownButton multiple={true} search={true}/>
                 </div>
                 <ErrorModal props={{open:state,setOpen:setState,text:"You've encountered an error!",header:"Error",messageButton1:"Sure, exit!", messageButton2:"Sure, Retry!"}}/>
             </div>
