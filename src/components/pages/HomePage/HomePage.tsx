@@ -31,7 +31,7 @@ export const HomePage = () => {
                     search: attribute can be 'true' or 'false'
                     */
                     }
-                    <DropdownButton multiple={true} search={true}/>
+                    {/*<DropdownButton multiple={true} search={true}/>*/}
                 </div>
                 <ErrorModal props={{open:state,setOpen:setState,text:"You've encountered an error!",header:"Error",messageButton1:"Sure, exit!", messageButton2:"Sure, Retry!"}}/>
             </div>
