@@ -2,23 +2,18 @@ import {UserService} from "../../services/api/UserAxis";
 import {useState} from "react";
 
 export const credentialVerifier = () => {
-    const userService:UserService = new UserService();
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [token1, setToken] = useState<boolean>(false);
-    // let token = localStorage.getItem("token");
-
+    const user : UserService = new UserService()
     function tokenIsValid(token: string) {
+        if(token)
+            return user.getToken(JSON.parse(token).token)
         //todo:token verifier
-        const obj = JSON.parse(token)
-        userService.getToken(obj.token).then((response) => {
-            setToken(response?response:false) ;
-        });
+        return token != "";
     }
 
     let allReadyLoggedOn = () => {
         let token = localStorage.getItem("token");
-        tokenIsValid(token?token:"");
-        return token == null || token1;
+        console.log(!tokenIsValid(token?token:""))
+        return !tokenIsValid(token?token:"");
     }
 
     return allReadyLoggedOn();

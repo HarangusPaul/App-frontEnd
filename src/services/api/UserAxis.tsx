@@ -2,17 +2,18 @@ import axios, {AxiosResponse} from 'axios';
 
 // @ts-ignore
 import {TokenModel} from "../models/TokenModel";
+// @ts-ignore
 import {UserLoginModel} from "../Models/UserLoginModel";
 
 
-const ipServer = "http://localhost:8080/app/v1";
+const ipServer = "http://localhost:8080/app/";
 
 export class UserService {
     login(userReq: UserLoginModel) {
 
         return axios
             .post(
-                `${ipServer}/accounts/login`,
+                `${ipServer}v1/accounts/login`,
                 userReq,
             )
             .then(function (response: AxiosResponse<TokenModel>) {
@@ -35,23 +36,29 @@ export class UserService {
         //     "Access-Control-Allow-Credentials":"true",
         //     'Authorization': 'Bearer ' + token1
         // };
-        return axios
-            .get(
-                `${ipServer}/accounts/valid-token`,
-                {
-                    headers: {
-                        "Authorization": `Bearer ${token1}`, "Access-Control-Allow-Origin": "*",
-                        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-                    }
-                }
-            )
-            .then(function (response: AxiosResponse<any>) {
-                return response.status === 200;
 
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        try {
+            axios
+                .get(
+                    `${ipServer}v2/accounts/valid-token`,
+                    {
+                        headers: {
+                            "Authorization": `Bearer ${token1}`, "Cache-Control": "no-cache"
+                        }
+                    }
+                )
+                .then(function (response: AxiosResponse<any>) {
+                    return response.status === 200;
+
+                })
+                .catch(function (error) {
+                    // console.log(error);
+                    return false
+                });
+            return true;
+        } catch (e) {
+            return false;
+        }
     }
 }
 
