@@ -1,7 +1,9 @@
 import axios, {AxiosResponse} from 'axios';
-import {UserLoginModel} from "../models/UserLoginModel";
+
 // @ts-ignore
 import {TokenModel} from "../models/TokenModel";
+import {UserLoginModel} from "../Models/UserLoginModel";
+
 
 
 const ipServer = "http://localhost:8080/app/v1";

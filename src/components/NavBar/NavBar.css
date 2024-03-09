@@ -7,6 +7,14 @@
     height: 100%;
 }
 
+
+@media only screen and (max-width: 1440px) {
+    .ui.labeled.icon.menu .item.signOut {
+        position: relative;
+        top: 71%;
+    }
+}
+
 @media only screen and (max-width: 1360px) {
 
     .ui.labeled.icon.menu .item.signOut {
