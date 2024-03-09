@@ -6,7 +6,7 @@
 }
 
 @media only screen and (max-width: 1360px) {
-    .LogInContainer {
+    .LogInContainerLogIn {
         position: absolute;
         background: white;
         border-radius: 25px;
@@ -18,7 +18,7 @@
 }
 
 @media only screen and (max-width: 412px) {
-    .LogInContainer {
+    .LogInContainerLogIn {
         position: absolute;
         background: white;
         border-radius: 25px;
@@ -30,7 +30,7 @@
 }
 
 @media only screen and (min-width: 1360px) {
-    .LogInContainer {
+    .LogInContainerLogIn {
         position: absolute;
         background: white;
         border-radius: 25px;
@@ -40,6 +40,19 @@
         width: 25%;
     }
 }
+
+@media only screen and (max-width: 460px) {
+    .LogInContainerLogIn {
+        position: absolute;
+        background: white;
+        border-radius: 25px;
+        top: 20%;
+        left: 17.5%;
+        height: 50%;
+        width: 70%;
+    }
+}
+
 
 .ui.image.Logo {
     position: relative;
