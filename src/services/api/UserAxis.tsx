@@ -2,6 +2,7 @@ import axios, {AxiosResponse} from 'axios';
 
 // @ts-ignore
 import {TokenModel} from "../models/TokenModel";
+// @ts-ignore
 import {UserLoginModel} from "../Models/UserLoginModel";
 
 
