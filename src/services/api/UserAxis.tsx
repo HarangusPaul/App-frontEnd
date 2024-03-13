@@ -4,6 +4,8 @@ import axios, {AxiosResponse} from 'axios';
 import {TokenModel} from "../models/TokenModel";
 // @ts-ignore
 import {UserLoginModel} from "../Models/UserLoginModel";
+//
+// @ts-ignore
 import {UserRegisterModel} from "../Models/UserRegisterModel";
 
 

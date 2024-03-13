@@ -6,10 +6,12 @@ import validator from "validator";
 import {UserService} from "../../../../services/api/UserAxis";
 import {UserRegisterModel} from "../../../../services/Models/UserRegisterModel";
 import getBrowserInfo from "../../../../utils/BrowserInfo";
+import {useNavigate} from "react-router-dom";
 
 
 
 export const RegisterForm= () =>{
+    const nav = useNavigate();
     const userService = new UserService();
     const [error,setError] = useState(false);
     const [errorMessage,setErrorMessage] = useState("");
@@ -43,13 +45,13 @@ export const RegisterForm= () =>{
 
 
     function isSamePassword(password:string, confirmedPassword:string) {
-        if(password == confirmedPassword) {setErrorMessage("Passwords Do Not Match!")}
+        if(password != confirmedPassword) {setErrorMessage("Passwords Do Not Match!")}
         return password != confirmedPassword;
     }
 
     function existentUsername(userName: string) {
         //todo:search in database if it is existent!If needed
-        return true;
+        return false;
     }
 
     const submit = (e:any)=>{
@@ -57,12 +59,32 @@ export const RegisterForm= () =>{
         if (!isValidEmail(email) || !isValidPassword(password) || isSamePassword(confirmedPassword,password) || existentUsername(userName)) {
             setError(true);
         }
-        const user:UserRegisterModel = {
-            email: email,
-            location: getBrowserInfo().location,
-            password: password,
-            username: userName
-        }
+
+        getBrowserInfo().then((respons)=>{
+            const user:UserRegisterModel = {
+                email: email,
+                location: respons.location,
+                password: password,
+                username: userName
+            }
+            console.log(user)
+            userService.register(user).then(()=>{
+                nav("/login");
+            })
+        }).catch((error)=>{
+            const user:UserRegisterModel = {
+                email: email,
+                location: "",
+                password: password,
+                username: userName
+            }
+            userService.register(user).then(()=>{
+                nav("/login");
+            })
+        })
+
+        console.log(getBrowserInfo())
+
         return;
     }
 
