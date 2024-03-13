@@ -65,7 +65,7 @@
 }
 
 
-@media only screen and (max-width: 1360px) {
+@media only screen and (max-width: 1600px) {
     .LogInContainer {
         position: absolute;
         background: white;
@@ -79,7 +79,70 @@
     .ui.animated.button.SendButtonLogIn {
         top: 80%;
         width: 180px;
-        left: 26%;
+        left: 27%;
+        position: absolute;
+    }
+
+    .ui.input.PasswordLogIn {
+        position: absolute;
+        border-top: white;
+        border-left: white;
+        border-right: white;
+        /* height: 20px; */
+        width: 295px;
+        left: 15%;
+        text-align: left;
+        top: 55%;
+        outline: none;
+    }
+
+    .ui.input.EmailLogIn {
+        position: absolute;
+        border-top: white;
+        border-left: white;
+        border-right: white;
+        margin-bottom: 40px;
+        /* height: 20px; */
+        width: 295px;
+        left: 15%;
+        text-align: left;
+        top: 40%;
+        outline: none;
+    }
+
+    .ui.LogoLogIn {
+        position: relative;
+        top: 11%;
+    }
+
+    .errorLabelLogIn {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        top: 350%;
+        left: 44%;
+        color: darkred;
+        width: 100%;
+        align-content: center;
+    }
+}
+
+
+@media only screen and (max-width: 1480px) {
+    .LogInContainer {
+        position: absolute;
+        background: white;
+        border-radius: 25px;
+        top: 20%;
+        left: 35.5%;
+        height: 50%;
+        width: 26%;
+    }
+
+    .ui.animated.button.SendButtonLogIn {
+        top: 80%;
+        width: 180px;
+        left: 25%;
         position: absolute;
     }
 
@@ -110,9 +173,9 @@
         outline: none;
     }
 
-    .ui.image.Logo {
+    .ui.LogoLogIn {
         position: relative;
-        top: 10%;
+        top: 11%;
     }
 
     .errorLabelLogIn {

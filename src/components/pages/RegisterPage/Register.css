@@ -5,20 +5,31 @@
     width: 100%;
 }
 
+.RegisterContainer {
+    position: absolute;
+    background: white;
+    border-radius: 25px;
+    top: 20%;
+    left: 35.5%;
+    height: 80%;
+    width: 26%;
+}
+
+
 @media only screen and (max-width: 1360px) {
-    .LogInContainer {
+    .RegisterContainer {
         position: absolute;
         background: white;
         border-radius: 25px;
-        top: 20%;
-        left: 35.5%;
-        height: 50%;
-        width: 26%;
+        top: 15%;
+        left: 37.5%;
+        height: 65%;
+        width: 25%;
     }
 }
 
 @media only screen and (max-width: 412px) {
-    .LogInContainer {
+    .RegisterContainer {
         position: absolute;
         background: white;
         border-radius: 25px;
@@ -30,14 +41,14 @@
 }
 
 @media only screen and (min-width: 1360px) {
-    .LogInContainer {
+    .RegisterContainer {
         position: absolute;
         background: white;
         border-radius: 25px;
-        top: 20%;
-        left: 37.5%;
-        height: 50%;
-        width: 25%;
+        top: 15%;
+        left: 33.5%;
+        height: 65%;
+        width: 30%;
     }
 }
 
