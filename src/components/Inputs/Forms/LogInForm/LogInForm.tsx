@@ -11,9 +11,7 @@ import {UserLoginModel} from "../../../../services/Models/UserLoginModel";
 
 
 export const LogInForm= () =>{
-    const navigate = useNavigate();
     const userService = new UserService();
-    const [token,setToken] = useState<string>("");
     const [error,setError] = useState(false);
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");

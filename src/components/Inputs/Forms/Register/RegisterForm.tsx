@@ -3,10 +3,14 @@ import "./RegisterForm.css"
 import {Button, ButtonContent, Icon, Input} from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css';
 import validator from "validator";
+import {UserService} from "../../../../services/api/UserAxis";
+import {UserRegisterModel} from "../../../../services/Models/UserRegisterModel";
+import getBrowserInfo from "../../../../utils/BrowserInfo";
 
 
 
 export const RegisterForm= () =>{
+    const userService = new UserService();
     const [error,setError] = useState(false);
     const [errorMessage,setErrorMessage] = useState("");
     const [email,setEmail] = useState("");
@@ -52,6 +56,12 @@ export const RegisterForm= () =>{
         e.preventDefault();
         if (!isValidEmail(email) || !isValidPassword(password) || isSamePassword(confirmedPassword,password) || existentUsername(userName)) {
             setError(true);
+        }
+        const user:UserRegisterModel = {
+            email: email,
+            location: getBrowserInfo().location,
+            password: password,
+            username: userName
         }
         return;
     }

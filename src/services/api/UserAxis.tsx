@@ -4,6 +4,7 @@ import axios, {AxiosResponse} from 'axios';
 import {TokenModel} from "../models/TokenModel";
 // @ts-ignore
 import {UserLoginModel} from "../Models/UserLoginModel";
+import {UserRegisterModel} from "../Models/UserRegisterModel";
 
 
 
@@ -19,6 +20,23 @@ export class UserService {
 
             )
                     .then(function (response:AxiosResponse<TokenModel>) {
+                return response.data;
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    register(userReq: UserRegisterModel) {
+
+        return axios
+            .post(
+                `${ipServer}/accounts/register`,
+                userReq,
+
+            )
+            .then(function (response:AxiosResponse<TokenModel>) {
                 return response.data;
 
             })
