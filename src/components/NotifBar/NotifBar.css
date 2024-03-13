@@ -1,0 +1,8 @@
+.NotificationDiv{
+    position: absolute;
+    z-index: 1;
+    background: white;
+    width: 25.5%;
+    right: 0;
+    height: 100%;
+}
