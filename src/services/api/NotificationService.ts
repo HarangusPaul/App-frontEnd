@@ -1,7 +1,7 @@
 import {notifications} from "../../components/NotifBar/NotifBar";
 
 class NotificationService{
-    private _notifications: [notifications] | undefined
+    private _notifications: Array<notifications> = [];
 
     addNotification(notification:notifications) {
         if(!this._notifications?.includes(notification))
@@ -9,6 +9,7 @@ class NotificationService{
     }
 
     returnNotifications(){
+        this.addNotification({title:"prost",message:"esti!"})
         return this._notifications
     }
 }

@@ -7,21 +7,23 @@ export interface notifications{
 }
 
 export interface notificationsProps{
-    notificationList: [notifications] | undefined
+    notificationList: Array<notifications>
 }
 
 export const NotificationBar = (props:notificationsProps) =>{
     return (<div className={"NotificationDiv"}>
-        <Header>Notifications:</Header>
-        <Divider/>
+        <Header className={"NotificationHeader"}>Notifications:</Header>
+        <Divider className={"NotificationDivider"}/>
+        <div>
         {
             props.notificationList?props.notificationList.map((item:any, index:any) => (
-                <div>
-                    <Header>{item.title}</Header>
-                    <Divider></Divider>
-                    <Label>{item.message}</Label>
+                <div className={"NotificationItemDiv"}>
+                    <Header className={"NotificationItemHeader"}>{item.title}</Header>
+                    <Divider className={"NotificationItemDivider"}/>
+                    <Label className={"NotificationItemLabel"}>{item.message}</Label>
                 </div>
             )):(<div/>)
         }
+        </div>
     </div>)
 }
