@@ -7,18 +7,26 @@ import {ModalProps, ResponsesModal} from "../../Modals/Dialog/ResponsesModal/Res
 import {ApprovalModal} from "../../Modals/Dialog/ApprovementModal/ApprovalModal";
 import DropdownButton from "../../Inputs/Buttons/DropdownButton/DropdownButton";
 import {ChoiceModal, ModalPropsChoice} from "../../Modals/Dialog/ChoiceModal/ChoiceModal";
+import {NotificationModal} from "../../Modals/Dialog/NotificationModal/NotificationModal";
 
 
 export const HomePage = () => {
 
-    const[state,setState] = useState<boolean>(false)
+    const [state, setState] = useState<boolean>(false)
     const [dropdownOptions, setDropdownOptions] = useState([
-        { key: '1', text: 'Option 1', value: 'Option 1' },
-        { key: '2', text: 'Option 2', value: 'Option 2' },
+        {key: '1', text: 'Option 1', value: 'Option 1'},
+        {key: '2', text: 'Option 2', value: 'Option 2'},
     ]);
 
 
-    const modalProps: ModalPropsChoice = {open:state,setOpen:setState,text:"You need to chose from the list below!",header:"Please choose",messageButton:"DONE", options: dropdownOptions}
+    const modalProps: ModalPropsChoice = {
+        open: state,
+        setOpen: setState,
+        text: "You need to chose from the list below!",
+        header: "Please choose",
+        messageButton: "DONE",
+        options: dropdownOptions
+    }
 
     return (
         <div>
@@ -50,7 +58,16 @@ export const HomePage = () => {
                     }
                     {/*<DropdownButton multiple={true} search={true}/>*/}
 
-
+                    {/*<NotificationModal props={{*/}
+                    {/*    open: state,*/}
+                    {/*    setOpen: setState,*/}
+                    {/*    text: "Notification description",*/}
+                    {/*    header: "Notification Name",*/}
+                    {/*    messageButton: "Close"*/}
+                    {/*}}/>*/}
+                    {/*<Button onClick={() => setState(true)}>*/}
+                    {/*    NotificationModal*/}
+                    {/*</Button>*/}
                 </div>
                 {/*<ErrorModal props={{open:state,setOpen:setState,text:"You've encountered an error!",header:"Error",messageButton1:"Sure, exit!", messageButton2:"Sure, Retry!"}}/>*/}
             </div>
