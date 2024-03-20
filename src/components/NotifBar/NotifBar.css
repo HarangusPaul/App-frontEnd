@@ -1,0 +1,71 @@
+.NotificationDiv{
+    position: absolute;
+    z-index: 1;
+    background: white;
+    width: 25.5%;
+    right: 0;
+    height: 100%;
+}
+.ui.header.NotificationHeader{
+        font-size: 48px;
+}
+
+.NotificationItemDiv{
+    background: gray;
+}
+
+.ui.header.NotificationHeader{
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 38px;
+
+}
+.ui.divider.NotificationDivider{
+    position: relative;
+    /*padding: 25px 50px 50px 100px;*/
+    top:30px;
+    width: 100%;
+    left: 0;
+}
+
+.NotificationContainer{
+    padding-top: 30px;
+    max-height: 100%;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.NotificationItemDiv{
+    border-radius: 20px;
+    position: relative;
+    padding-top: 45px;
+    background: #E6E5E5;
+    height: 90px;
+    cursor: pointer;
+}
+
+.NotificationItemDiv:hover{
+    background: gray;
+}
+
+.ui.header.NotificationItemHeader{
+    padding-left: 10px;
+    position: relative;
+    top: -20px;
+    font-size: 20px;
+}
+
+.ui.divider.NotificationItemDivider{
+    position: relative;
+    top: -30px;
+}
+
+.ui.label.NotificationItemLabel{
+    position: relative;
+    top: -40px;
+    width: 100%;
+    height: 70px;
+    background: transparent;
+    overflow: hidden;
+}
