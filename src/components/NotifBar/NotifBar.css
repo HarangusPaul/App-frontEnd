@@ -6,6 +6,13 @@
     right: 0;
     height: 100%;
 }
+.ui.header.NotificationHeader{
+        font-size: 48px;
+}
+
+.NotificationItemDiv{
+    background: gray;
+}
 
 .ui.header.NotificationHeader{
     position: relative;
@@ -21,11 +28,25 @@
     left: 0;
 }
 
+.NotificationContainer{
+    padding-top: 30px;
+    max-height: 100%;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
 .NotificationItemDiv{
+    border-radius: 20px;
     position: relative;
-    padding-top: 25px;
+    padding-top: 45px;
+    background: #E6E5E5;
+    height: 90px;
+    cursor: pointer;
+}
+
+.NotificationItemDiv:hover{
     background: gray;
-    height: 110px;
 }
 
 .ui.header.NotificationItemHeader{
@@ -46,4 +67,5 @@
     width: 100%;
     height: 70px;
     background: transparent;
+    overflow: hidden;
 }

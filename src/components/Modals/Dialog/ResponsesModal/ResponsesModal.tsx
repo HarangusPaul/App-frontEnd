@@ -24,10 +24,10 @@ export const ResponsesModal = (props: any) => {
 
     return (
         <Modal className={"modalFrame"}
-               size={props.size}
+               size={props.props.size}
                open={open}
                onClose={() => {
-                   if (props.setOpen != undefined) props.setOpen(false)
+                   if (props.props.setOpen != undefined) props.setOpen(false)
                }}
         >
             <ModalHeader>{props.props.header}</ModalHeader>
